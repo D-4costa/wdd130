@@ -19,19 +19,25 @@ body {
     background-color: #ffffff;
 }
 
+/* Header */
 header {
     background-color: var(--accent2-color);
     position: absolute;
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    justify-content: space-between;
     padding: 1rem 2rem;
     z-index: 10;
 }
 
 header img {
     height: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
 }
 
 nav a {
@@ -120,11 +126,26 @@ nav a {
     margin-bottom: 2rem;
 }
 
-.adventure img {
-    width: 200px;
-    height: auto;
+.adventure figure {
+    display: inline-block;
     margin: 0.5rem;
     border: 5px solid var(--accent1-color);
+    background-color: white;
+    max-width: 200px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.adventure figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.adventure figcaption {
+    font-size: 0.85rem;
+    color: var(--accent2-color);
+    padding: 0.5rem;
 }
 
 /* Footer */
@@ -132,27 +153,41 @@ footer {
     background-color: var(--accent2-color);
     color: white;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
     font-size: 0.9rem;
+    flex-wrap: wrap;
 }
 
-footer nav {
-    margin: 0.5rem 0;
+footer p {
+    margin: 0;
+    flex: 1;
 }
 
-footer nav a {
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.footer-right nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-right nav a {
     color: white;
-    margin: 0 1rem;
     text-decoration: none;
+    font-weight: bold;
 }
 
-.social {
-    margin-top: 0.5rem;
+.footer-right .social {
+    display: flex;
+    gap: 0.5rem;
 }
 
-.social img {
+.footer-right .social img {
     height: 25px;
-    margin: 0 0.5rem;
 }
